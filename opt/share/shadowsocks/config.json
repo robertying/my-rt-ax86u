@@ -19,7 +19,7 @@
     },
     {
       "protocol": "redir",
-      "local_address": "0.0.0.0",
+      "local_address": "::",
       "local_port": 1234,
       "tcp_redir": "tproxy",
       "udp_redir": "tproxy"
