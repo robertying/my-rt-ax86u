@@ -1,0 +1,13 @@
+#!/bin/sh
+
+export http_proxy=http://127.0.0.1:1090
+export https_proxy=http://127.0.0.1:1090
+
+ENABLED=yes
+PROCS=smartdns-trust
+ARGS="-c /opt/share/smartdns/trust.conf -p /opt/var/run/smartdns-trust.pid"
+PREARGS=""
+DESC=$PROCS
+PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/share/smartdns
+
+. /opt/etc/init.d/rc.func

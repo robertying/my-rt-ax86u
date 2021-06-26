@@ -1,0 +1,5 @@
+#!/bin/sh
+CONFIG=$1
+source /usr/sbin/helper.sh
+
+pc_replace "servers-file=/tmp/resolv.dnsmasq" "server=127.0.0.1#10053" $CONFIG

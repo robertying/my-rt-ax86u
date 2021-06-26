@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ "$1" == "stop" ] || [ "$1" == "restart" ]; then
+    /opt/share/shadowsocks/set_iptables.sh flush
+fi
+
+ENABLED=yes
+PROCS=sslocal
+ARGS="-c /opt/share/shadowsocks/config.json"
+PREARGS=""
+DESC=$PROCS
+PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/share/shadowsocks
+
+. /opt/etc/init.d/rc.func
+
+if [ "$1" == "start" ] || [ "$1" == "restart" ]; then
+    source /opt/share/shadowsocks/env.sh
+    /opt/share/shadowsocks/set_iptables.sh create "$IPSET4" "$IPSET6" "$PORT"
+fi
