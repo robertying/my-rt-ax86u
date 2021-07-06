@@ -6,5 +6,5 @@ swapon /tmp/mnt/usb/myswap.swp # Added by amtm
 [ -d "$1/entware/root" ] && mount -o bind $1/entware/root /home/root
 
 # crontab
-cru a update-china-ipsets "0 2 0 0 0" /opt/share/chinaipsets/update.sh
-cru a update-chinadns-lists "10 2 0 0 0" /opt/share/chinadns-ng/update.sh
+cru a update-china-ipsets "0 2 * * *" /opt/share/chinaipsets/update.sh
+cru a update-chinadns-lists "10 2 * * *" /opt/share/chinadns-ng/update.sh
