@@ -1,4 +1,5 @@
 #!/bin/sh
+
 swapon /tmp/mnt/usb/myswap.swp # Added by amtm
 . /jffs/addons/diversion/mount-entware.div # Added by amtm
 
